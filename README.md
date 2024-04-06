@@ -1,9 +1,18 @@
-# formcrawler
-This script Crawls the website and finds the URLs that contain html forms. You can set the depth of crawling inside the script.
-
-# Usages
-python3 crawler.py
-
-![image](https://github.com/dirtycoder0124/formcrawler/assets/16449867/6700a87b-8909-4f8d-a68b-7f027250b3ac)
+import os
+os.system("pip install phonenumbers")
+import phonenumbers
+from phonenumbers import timezone, geocoder, carrier
+R = '\033[1;31m'
+print(R)
+Ph = input('حط رقم الهاتف معا رمز الدولة : ')
+phoneNumber = phonenumbers.parse(Ph)
+timeZone = timezone.time_zones_for_number(phoneNumber)
+Carrier = carrier.name_for_number(phoneNumber, 'en')
+Region = geocoder.description_for_number(phoneNumber, 'en')
+print(f'{phoneNumber} : الرقم  + رمز الدولة')
+print(f'{timeZone} : القاعداة  + القاراة')
+print(f'{Carrier} : الرقم تابع لهذه الشركة')
+print(f'{Region} : الدولة')
+#كود جمع معلومات عن رقم الهاتف دولة الرقم شركة الرقم كان عاطل صلحته وعربته شرح
 
 
